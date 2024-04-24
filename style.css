@@ -11,10 +11,7 @@
   --bg-clr: #0e0e0e;
   --accent-clr: #fe6204;
   --white: #fff;
-}
-
-li {
-  list-style: none;
+  --size: 30px;
 }
 
 a {
@@ -42,20 +39,6 @@ body {
 /* Header section */
 .header {
   padding-block: 1.5rem;
-  background-color: var(--bg-clr);
-}
-
-.header .logo {
-  font-size: 1.5rem;
-}
-
-.header .logo p {
-  color: var(--white);
-  font-weight: 600;
-}
-
-.header .logo span {
-  color: var(--accent-clr);
 }
 
 .header .d-flex {
@@ -64,27 +47,36 @@ body {
   justify-content: space-between;
 }
 
-/* Switch */
+.header .logo {
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.header .logo span {
+  color: var(--accent-clr);
+}
+
+/* Toggle Switch */
 .switch__wrapper {
   position: relative;
-  height: 30px;
-  margin-right: 1rem;
+  height: var(--size);
 }
 
 input[type='radio'] {
-  width: 30px;
-  height: 30px;
+  width: var(--size);
+  height: var(--size);
   cursor: pointer;
 }
 
 .switch__background {
   background-color: var(--accent-clr);
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
   left: 0;
-  border-radius: 30px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--size);
   pointer-events: none;
 }
 
@@ -93,8 +85,8 @@ input[type='radio'] {
   left: 3px;
   top: 2px;
   right: 100%;
-  width: 25px;
   height: 25px;
+  width: 25px;
   border-radius: 50%;
   background-color: var(--white);
   transition: all 150ms ease-in-out;
@@ -110,10 +102,6 @@ input[type='radio'] {
   flex-direction: column-reverse;
 }
 
-.showcase__lamp {
-  position: relative;
-}
-
 .showcase__lamp .lamp {
   width: 150px;
   margin-inline: auto;
@@ -126,15 +114,15 @@ input[type='radio'] {
   top: -2rem;
   z-index: -1;
   left: -0.4rem;
-  transition: opacity 0.2s ease-in;
   opacity: 0;
+  transition: opacity 0.2s ease-in;
 }
 
 .light.showLight {
   opacity: 1;
 }
 
-/* showcase text */
+/* Showcase text */
 .showcase__text {
   transform: translateY(-10rem);
   width: 100%;
@@ -157,18 +145,19 @@ input[type='radio'] {
   margin-top: 1rem;
   background-color: var(--accent-clr);
   color: var(--white);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 0.7rem 1.5rem;
   text-transform: capitalize;
+  font-weight: 600;
 }
 
-/* Desktop version */
+/* Media query */
 @media (min-width: 768px) {
   .container {
     padding-inline: 4rem;
   }
 
-  /* showcase menu */
+  /* showcase section */
   .showcase .d-flex {
     flex-direction: row;
     align-items: center;
